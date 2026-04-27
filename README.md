@@ -1,19 +1,19 @@
-# Bitdefender Router Security Testing
+# Router Security Testing — Bitdefender Validation
 
-End-to-end security validation for home networking hardware using **Bitdefender** threat detection, DHS policy enforcement, containerized staging environments, and weekly structured reporting.
+End-to-end security validation for home networking hardware using **Bitdefender** threat detection, device security policy enforcement, containerized staging environments, and weekly structured reporting.
 
 ---
 
 ## Overview
 
-This project covers the full security testing lifecycle for Verizon home routers and gateways — from initial container staging and deployment through active threat detection, policy compliance, and weekly update reporting.
+This project covers the full security testing lifecycle for home routers and gateways — from initial container staging and deployment through active threat detection, policy compliance, and weekly update reporting.
 
 ---
 
 ## Test Environment
 
 ```
-CHR30A Router  ──→  Container Staging  ──→  Bitdefender Validation  ──→  DHS Policy Check
+Home Gateway  ──→  Container Staging  ──→  Bitdefender Validation  ──→  Security Policy Check
                          │
                     Docker-based
                     staging pipeline
@@ -26,8 +26,7 @@ CHR30A Router  ──→  Container Staging  ──→  Bitdefender Validation  
 ### Phase 1 — Container Staging & Validation
 - Deploy Bitdefender agent in containerized staging environment
 - Validate container integrity before production push
-- Test: `CHR30A_Bitdefender_Container_Staging_&_Validation`
-- Artifacts: MP4 screen recording of full staging workflow
+- Screen recording of full staging workflow captured as evidence
 
 ### Phase 2 — Security Scanning
 - Active threat detection against known malicious endpoints
@@ -35,17 +34,16 @@ CHR30A Router  ──→  Container Staging  ──→  Bitdefender Validation  
 - Intrusion detection system (IDS) rule verification
 - Vulnerability scan against router admin interface
 
-### Phase 3 — DHS Policy Enforcement
-- Device Host Security (DHS) compliance checks
+### Phase 3 — Device Security Policy Enforcement
+- Device security compliance checks
 - Network isolation policy validation
 - Unauthorized device detection testing
-- Weekly report generation: `DHS_Weekly_Report`
+- Weekly report generation
 
-### Phase 4 — Verizon Digital Secure Home
+### Phase 4 — Digital Secure Home Validation
 - Security failure scenario testing
 - Parental controls and content filtering validation
 - VPN pass-through testing
-- Documented in: `Verizon_Digital_Secure_Home_security_failures`
 
 ---
 
@@ -53,12 +51,6 @@ CHR30A Router  ──→  Container Staging  ──→  Bitdefender Validation  
 
 Structured HTML weekly reports generated per sprint:
 
-| Week | Period | Report |
-|------|--------|--------|
-| Week 1 | Apr 21–25, 2026 | DHS_Weekly_Report_Apr21-25_2026.html |
-| Week 1 | Apr 22, 2026 | VHA_Security_Validation (PPTX/PDF) |
-
-Reports include:
 - Tests executed
 - Pass/fail breakdown
 - Defects found (with screenshots)
@@ -66,25 +58,14 @@ Reports include:
 
 ---
 
-## Procedure Reference
-
-Full testing procedure documented in:
-`bitdefender_complete_procedure_v2.pdf`
-
-Testing plan architecture from:
-`Bitdefender Router Security Testing Plan - Google Gemini.html`
-
----
-
 ## Tools & Tech
 
 | Tool | Purpose |
 |------|---------|
-| **Bitdefender Box / Agent** | Primary threat detection engine |
+| **Bitdefender** | Primary threat detection engine |
 | **Docker** | Container staging environment |
 | **Wireshark** | Packet inspection during attack scenarios |
 | **NotebookLM** | AI-assisted weekly report summarization |
-| **Google Gemini** | Test plan generation and analysis |
 | **Python** | Automation scripts for test data parsing |
 
 ---
